@@ -87,10 +87,10 @@ public unsafe class SpawnPointFinderUI : IDisposable//idk what to call this
                     var k = 100;
                     foreach (var msp in _spawnPoints)
                     {
-                        if (_filter.PassFilter(MapHelpers.GetMapName(msp.MapID)))
+                        if (_filter.PassFilter(MapHelpers.GetZoneName(msp.MapID)))
                         {
                             ImGui.TableNextColumn();
-                            ImGui.TextUnformatted($"{MapHelpers.GetMapName(msp.MapID)}");
+                            ImGui.TextUnformatted($"{MapHelpers.GetZoneName(msp.MapID)}");
                             ImGui.TableNextColumn();
                             if (!msp.Recording)
                             { //using id overload bugged - now adds some other weird icon to the end ? gotta use push/pop id
@@ -196,7 +196,7 @@ public unsafe class SpawnPointFinderUI : IDisposable//idk what to call this
 
             foreach (var msp in _importList)
             {
-                ImGui.TextUnformatted(MapHelpers.GetMapName(msp.MapID));
+                ImGui.TextUnformatted(MapHelpers.GetZoneName(msp.MapID));
             }
             ImGui.Dummy(Vector2.Zero); ImGui.Separator(); ImGui.Dummy(Vector2.Zero);
 

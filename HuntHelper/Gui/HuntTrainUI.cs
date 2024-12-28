@@ -160,7 +160,7 @@ public class HuntTrainUI : IDisposable
                 ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
                 if (_showMapName)
                 {
-                    ImGui.Selectable($"「{MapHelpers.GetMapName(m.TerritoryID)}」##{m.Name} {m.Instance.GetInstanceGlyph()}", n == _selectedIndex,
+                    ImGui.Selectable($"「{MapHelpers.GetZoneName(m.TerritoryID)}」##{m.Name} {m.Instance.GetInstanceGlyph()}", n == _selectedIndex,
                         ImGuiSelectableFlags.None, new Vector2(ImGui.GetWindowWidth(), trainItemY));
                     ImGui.SetItemAllowOverlap();
                     ImGui.SameLine();
@@ -664,7 +664,7 @@ public class HuntTrainUI : IDisposable
         attribute switch
         {
             HuntTrainMobAttribute.Name =>
-                _showMapName ? $"「{MapHelpers.GetMapName(mob.TerritoryID)}」{mob.Name}{mob.Instance.GetInstanceGlyph()}"
+                _showMapName ? $"「{MapHelpers.GetZoneName(mob.TerritoryID)}」{mob.Name}{mob.Instance.GetInstanceGlyph()}"
                 : $"{mob.Name}{mob.Instance.GetInstanceGlyph()}",
             HuntTrainMobAttribute.LastSeen => $"{(DateTime.Now.ToUniversalTime() - mob.LastSeenUTC).TotalMinutes:0.}m",
             HuntTrainMobAttribute.Position => $"({mob.Position.X:0.0}, {mob.Position.Y:0.0})"

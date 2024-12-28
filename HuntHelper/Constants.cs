@@ -11,7 +11,7 @@ public static class Constants
 #if DEBUG
     public const string RepoUrl = "https://github.com/img02/HuntHelper-Resources/tree/test";
 #else
-    public const string RepoUrl = "https://github.com/img02/HuntHelper-Resources/";
+    public const string RepoUrl = "https://github.com/img02/HuntHelper-Resources";
 #endif
 
     public const string translateUrl = "https://github.com/img02/HuntHelper/tree/main/Translate";
@@ -138,17 +138,17 @@ public static class Constants
 
     #region ChineseSimplified
     //zh
-    private static readonly string[] Minhocao_chs = { "土元精" };
-    private static readonly string[] Squonk_chs = { "唧唧咋咋" };
-    private static readonly string[] Leucrotta_chs = { "亚拉戈奇美拉", "小海德拉", "美拉西迪亚薇薇尔飞龙" };
-    private static readonly string[] Gandawera_chs = { "皇金矿", "星极花" };
-    private static readonly string[] Okina_chs = { "无壳观梦螺", "观梦螺" };
-    private static readonly string[] Udumbara_chs = { "莱西", "狄亚卡" };
-    private static readonly string[] SaltAndLight_chs = { "舍弃" };
-    private static readonly string[] ForgivenPedantry_chs = { "矮人棉" };
-    private static readonly string[] Ixtab_chs = { "破裂的隆卡人偶", "破裂的隆卡石蒺藜", "破裂的隆卡器皿" };
-    private static readonly string[] Sphatika_chs = { "阿输陀花", "毕舍遮", "金刚尾" };
-    private static readonly string[] Ruinator_chs = { "思考之物", "彷徨之物", "叹息之物" };
+    private static readonly string[] Minhocao_chs = ["土元精"];
+    private static readonly string[] Squonk_chs = ["唧唧咋咋"];
+    private static readonly string[] Leucrotta_chs = ["亚拉戈奇美拉", "小海德拉", "美拉西迪亚薇薇尔飞龙"];
+    private static readonly string[] Gandawera_chs = ["皇金矿", "星极花"];
+    private static readonly string[] Okina_chs = ["无壳观梦螺", "观梦螺"];
+    private static readonly string[] Udumbara_chs = ["莱西", "狄亚卡"];
+    private static readonly string[] SaltAndLight_chs = ["舍弃"];
+    private static readonly string[] ForgivenPedantry_chs = ["矮人棉"];
+    private static readonly string[] Ixtab_chs = ["破裂的隆卡人偶", "破裂的隆卡石蒺藜", "破裂的隆卡器皿"];
+    private static readonly string[] Sphatika_chs = ["阿输陀花", "毕舍遮", "金刚尾"];
+    private static readonly string[] Ruinator_chs = ["思考之物", "彷徨之物", "叹息之物"];
 
     private const string MinhocaoRegex_chs = $"土元精{BattleRegexBase_chs}";
     private const string SquonkRegex_chs = $"斯奎克发动了“唧唧咋咋”";

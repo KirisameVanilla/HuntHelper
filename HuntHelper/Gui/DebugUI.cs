@@ -203,7 +203,7 @@ namespace HuntHelper.Gui
 
         private unsafe void UpdateLocalStuff()
         {
-            _territoryName = MapHelpers.GetMapName(_clientState.TerritoryType);
+            _territoryName = MapHelpers.GetZoneName(_clientState.TerritoryType);
             _worldName = _clientState.LocalPlayer?.CurrentWorld.ValueNullable?.Name.ToString() ?? "Not Found";
             _territoryId = _clientState.TerritoryType;
             _instance = (uint)UIState.Instance()->PublicInstance.InstanceId;

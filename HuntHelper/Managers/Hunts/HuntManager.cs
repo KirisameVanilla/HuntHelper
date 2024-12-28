@@ -182,7 +182,7 @@ public class HuntManager : IDisposable
             //if exists in old mob set, skip tts + chat
             if (_previousMobs.Any(hunt => hunt.Mob.NameId == mob.NameId)) continue;
             
-            MarkSeen?.Invoke(mob.ToHuntTrainMob(territoryId, mapid, instance, MapHelpers.GetMapName(territoryId), zoneMapCoordSize));
+            MarkSeen?.Invoke(mob.ToHuntTrainMob(territoryId, mapid, instance, MapHelpers.GetZoneName(territoryId), zoneMapCoordSize));
 
             //Do tts and chat stuff
             var rank = GetHuntRank(mob.NameId);
@@ -552,7 +552,7 @@ public class HuntManager : IDisposable
 
         if (reload) return null;
 
-        var fileName = mapName.Replace(" ", "_") + ("-data.jpg");
+        var fileName = mapName.Replace(" ", "_") + (".jpg");
         //Default because Empty can override user window opacity 
         return Plugin.TextureProvider.GetFromFile(ImageFolderPath + fileName).GetWrapOrDefault();
     }
@@ -576,8 +576,8 @@ public class HuntManager : IDisposable
         }
 
         //use spawnpoint data to get map names and generate urls.. coz lazy to retype
-        var names = spawnpointdata.Select(x => x.MapName).ToList();
-        var urls = names.Select(n => n = Constants.BaseImageUrl + n.Replace(" ", "_") + "-data.jpg").ToList();
+        var names = spawnpointdata.Select(x => x.MapID.ToString()).ToList();
+        var urls = names.Select(n => n = Constants.BaseImageUrl + n.Replace(" ", "_") + ".jpg").ToList();
 
         //then async download each image and save to file
         var downloader = new ImageDownloader(urls, ImageFolderPath);

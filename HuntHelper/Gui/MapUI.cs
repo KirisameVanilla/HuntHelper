@@ -242,7 +242,7 @@ namespace HuntHelper.Gui
         }
         private IDalamudTextureWrap? GetMapTexture()
         {
-            var mapNameEng = MapHelpers.GetMapNameInEnglish(_territoryId);
+            var mapNameEng = $"{_territoryId}";
             return _huntManager.GetMapImage(mapNameEng);
         }
 
@@ -1389,7 +1389,7 @@ namespace HuntHelper.Gui
 
         private unsafe void ClientState_TerritoryChanged(ushort e)
         {
-            _territoryName = MapHelpers.GetMapName(_clientState.TerritoryType);
+            _territoryName = MapHelpers.GetZoneName(_clientState.TerritoryType);
             //_worldName = _clientState.LocalPlayer?.CurrentWorld?.GameData?.Name.ToString() ?? "Not Found";
             _territoryId = _clientState.TerritoryType;
             _instance = (uint)UIState.Instance()->PublicInstance.InstanceId;
@@ -1503,7 +1503,7 @@ namespace HuntHelper.Gui
                         SpawnDataGatherer.AddFoundMob(mob.NameId, _huntManager.GetMobNameInEnglish(mob.NameId),
                         new Vector3(ConvertPosToCoordinate(mob.Position.X), ConvertPosToCoordinate(mob.Position.Z), ConvertPosToCoordinate(mob.Position.Y)),
                         $"{m.Rank}", _territoryId,
-                        MapHelpers.GetMapNameInEnglish(_territoryId), _clientState.LocalContentId);
+                        MapHelpers.GetZoneName(_territoryId), _clientState.LocalContentId);
                     }
                 }
             }
